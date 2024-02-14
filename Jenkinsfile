@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        VAULT_PASSWORD = credentials('ansible-vault-password') // Use the ID of the credential you created
+    }
+    
     stages{
         stage('Cleanup') {
             steps {
@@ -28,9 +32,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir('ansible') {
-                    withCredentials([username: 'ansible-user', password: 'ansible-password']) {
-                        sh "ansible-playbook -i inventory all.yml --tags='deploy' --extra-vars 'ANSIBLE_VAULT_PASSWORD=${ansible_vault_password}'"
-                    }   
+                    sh "ansible-playbook -i inventory all.yml --tags='deploy' --extra-vars 'ANSIBLE_VAULT_PASSWORD=${VAULT_PASSWORD}'"
                 }
             }
         }
