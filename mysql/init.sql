@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS database;
-CREATE USER IF NOT EXISTS 'user' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON database.* TO 'user';
+CREATE DATABASE IF NOT EXISTS web;
+CREATE USER IF NOT EXISTS 'web_user' IDENTIFIED BY 'some_strong_password';
+GRANT ALL PRIVILEGES ON web.* TO 'web_user';
 
 CREATE TABLE web.portfolio_projects (
   project_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -18,9 +18,8 @@ CREATE TABLE web.users (
 
 CREATE TABLE web.reviews (
                              id INT AUTO_INCREMENT PRIMARY KEY,
-                             username VARCHAR(255) NOT NULL,
+                             username VARCHAR(100) NOT NULL,
                              review TEXT NOT NULL,
                              is_positive BOOLEAN NOT NULL,
-                             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                             FOREIGN KEY (username) REFERENCES web.users(username)
-);
+                             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
