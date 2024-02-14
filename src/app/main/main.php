@@ -1,5 +1,5 @@
 <?php
-session_start();
+include '../shared/database.php';
 ?>
 <?php require '../shared/modules/head_tad.php'; ?>
 

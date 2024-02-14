@@ -2,7 +2,7 @@
 <?php
 ob_start();
 session_start();
-include '../shared/config/database.php';
+include '../shared/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
