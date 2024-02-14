@@ -22,7 +22,7 @@ The point of this course is to create a modern dynamic website business card wit
 | 13 | Kryvyi Dmytro | Fishing |
 
 ## Project details
-![Communication schema drawing](https://github.com/dimoybiyca/web2024ki49kryvyidmytro13/tree/task3/media/diagram.jpg?raw=true)
+![Diagram](https://github.com/dimoybiyca/web2024ki49kryvyidmytro13/blob/task3/media/diagram.jpg)
 Details about technologies and programing languages that will be used in next tasks. By employing a modern web development stack comprising PHP, JavaScript, HTML, CSS, and MySQL, this project aims to deliver a seamless and engaging user experience while ensuring the scalability, security, and maintainability of the application. With each technology playing a distinct yet complementary role, we strive to achieve our development objectives efficiently and effectively.
 
 ### PHP (The MVP of the Backend)
