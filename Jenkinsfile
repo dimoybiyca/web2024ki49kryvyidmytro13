@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir('ansible') {
-                    sh "ansible-playbook -i inventory all.yml --tags='deploy' --extra-vars 'ANSIBLE_VAULT_PASSWORD=${VAULT_PASSWORD}'"
+                    sh 'ansible-playbook -i inventory all.yml --tags='deploy' --vault-password-file=${VAULT_PASSWORD}'
                 }
             }
         }
