@@ -1,0 +1,11 @@
+[main]
+home-cluster-1 ansible_host=192.168.0.51 ansible_user=lemoncat ansible_sudo_pass=2077
+
+[managers]
+home-cluster-3 ansible_host=192.168.0.53 ansible_user=lemoncat ansible_sudo_pass=2077
+; server-1 ansible_host=192.168.0.61 ansible_user=vagrant ansible_sudo_pass=vagrant
+
+; [workers]
+#home-cluster-2 ansible_host=192.168.0.52 ansible_user=lemoncat ansible_sudo_pass=2077
+; server-2 ansible_host=192.168.0.62 ansible_user=vagrant ansible_sudo_pass=vagrant
+; server-3 ansible_host=192.168.0.63 ansible_user=vagrant ansible_sudo_pass=vagrant

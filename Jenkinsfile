@@ -25,5 +25,14 @@ pipeline {
                 sh "docker push 192.168.0.51:5000/web-php:latest"
             }
         }
+        stage('Deploy') {
+            steps {
+                dir('ansible') {
+                    withCredentials([username: 'ansible-user', password: 'ansible-password']) {
+                        sh "ansible-playbook -i inventory all.yml --tags='deploy' --extra-vars 'ANSIBLE_VAULT_PASSWORD=${ansible_vault_password}'"
+                    }   
+                }
+            }
+        }
     }
 }
