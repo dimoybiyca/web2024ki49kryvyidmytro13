@@ -32,3 +32,22 @@ Get ready to embrace the classics with HTML and CSS, the dynamic duo that never 
 
 ### MySQL
 Say hello to MySQL, the stalwart guardian of our precious data. While NoSQL databases may be all the rage these days, MySQL remains steadfast in its commitment to relational integrity and ACID compliance. Sure, it may not scale like its counterparts, but who needs scalability when you have the warm embrace of foreign key constraints.
+
+## Run
+How to run project
+
+### Create network
+ ```sh 
+ docker network create <network>
+ ```
+
+### MySql
+```sh 
+ docker run -d -p 3306:3306 --name <mysql-name> -e MYSQL_ROOT_PASSWORD=<root_password> -e MYSQL_DATABASE=<database> -e MYSQL_USER=<user> -e MYSQL_PASSWORD=<password> --network <network> mysql/mysql-server:latest
+```
+
+### PHP Server
+ ```sh 
+ docker build -t php-server .
+ docker run -d -p 80:80 --restart=always --name=iwnil-web -e DB_HOST=<mysql-name> -e DB_USER=<user> -e DB_PASS=<password> -e DB_NAME=<database> --network <network> php-server
+ ```
