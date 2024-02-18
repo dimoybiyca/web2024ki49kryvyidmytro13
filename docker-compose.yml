@@ -1,0 +1,31 @@
+version: '2'
+services:
+  webserver:
+    image: phpstorm/php-73-apache-xdebug-27
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+      DB_HOST: "mysql-docker-container"
+      DB_USER: "web_user"
+      DB_PASS: "some_password"
+      DB_NAME: "web"
+    networks:
+      - php-network
+
+  mysql-docker-container:
+    image: mysql/mysql-server:5.6
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: web
+      MYSQL_USER: dimoybiyca
+      MYSQL_PASSWORD: dima
+    networks:
+      - php-network
+
+networks:
+  php-network:
