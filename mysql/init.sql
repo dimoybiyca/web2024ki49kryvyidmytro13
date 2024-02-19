@@ -1,7 +1,3 @@
-CREATE DATABASE IF NOT EXISTS web;
-CREATE USER IF NOT EXISTS 'web_user' IDENTIFIED BY 'some_strong_password';
-GRANT ALL PRIVILEGES ON web.* TO 'web_user';
-
 CREATE TABLE web.portfolio_projects (
   project_id INT AUTO_INCREMENT PRIMARY KEY,
   project_name VARCHAR(255) NOT NULL,
