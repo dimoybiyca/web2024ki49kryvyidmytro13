@@ -738,6 +738,14 @@ input:-webkit-autofill:active {
     flex-direction: column;
 }
 
+.disclaimer {
+    text-align: center;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
 .close {
     align-self: flex-end;
 }
