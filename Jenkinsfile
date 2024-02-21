@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        VAULT_PASSWORD = credentials('ansible-vault-password') // Use the ID of the credential you created
+        VAULT_PASSWORD = credentials('ansible-vault-password')
     }
     
     stages{
