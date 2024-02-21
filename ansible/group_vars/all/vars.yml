@@ -1,0 +1,8 @@
+---
+services:
+  - name: web-php
+    version: latest
+  - name: mysql
+    version: latest
+
+docker_registry: 192.168.0.51:5000
