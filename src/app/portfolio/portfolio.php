@@ -1,7 +1,7 @@
 <?php global $conn; ?>
 <?php
 session_start();
-include '../shared/config/database.php';
+include '../shared/database.php';
 $projectsPerPage = 1;
 
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;

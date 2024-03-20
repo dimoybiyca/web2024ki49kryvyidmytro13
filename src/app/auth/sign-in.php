@@ -1,9 +1,6 @@
-<?php global $conn; ?>
+<?php global $conn, $google_client; ?>
 <?php
-ob_start();
-session_start();
-include '../shared/config/database.php';
-
+include '../shared/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -53,6 +50,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <button class="login__btn" type="submit">Login</button>
             </form>
+
+            <?php if (!isset($_SESSION['access_token'])) {
+                $login_button = '<a class="google__btn" href="' . $google_client->createAuthUrl() . '">
+                    <img src="/src/assets/icons/google.svg" alt="G"/>
+                    <span>Sign in with Google</span>
+                    </a>';
+                echo $login_button;
+            } ?>
         </div>
         <a href="/src/app/auth/sign-up.php" class="login__link">Create account</a>
 

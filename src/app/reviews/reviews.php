@@ -1,7 +1,6 @@
 <?php global $conn; ?>
 <?php
-session_start();
-include '../shared/config/database.php';
+include '../shared/database.php';
 ?>
 
 <?php require '../shared/modules/head_tad.php'; ?>
@@ -28,7 +27,7 @@ include '../shared/config/database.php';
                     $reviewClass = $row['is_positive'] ? 'positive-review' : 'negative-review';
 
                     echo '<div class="review ' . $reviewClass . '">';
-                    echo '<span class="review__avatar">' . strtoupper(substr($row['username'], 0, 1)) . '</span>';
+                    echo '<span class="review__avatar">' . mb_strtoupper(mb_substr($row['username'], 0, 1)) . '</span>';
                     echo '<div class="review__content">';
                     echo '<p class="review__user">' . $row['username'] . '</p>';
                     echo '<p class="review__text">' . $row['review'] . '</p>';

@@ -444,8 +444,8 @@ input:-webkit-autofill:active {
 
 .login__header {
     text-align: center;
-    margin-bottom: 50px;
-    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .login__btn {
@@ -466,7 +466,7 @@ input:-webkit-autofill:active {
 
 .login__link {
     font-size: 28px;
-    margin-top: 100px;
+    margin-top: 50px;
     display: block;
     text-align: center;
     color: var(--green);
@@ -476,6 +476,21 @@ input:-webkit-autofill:active {
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
+}
+
+.google__btn {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    padding: 10px 0;
+    gap: 20px;
+
+    span {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .login__footer {

@@ -1,9 +1,9 @@
 FROM mysql:8.0.22
 
-ENV MYSQL_DATABASE "database"
-ENV MYSQL_USER "user"
-ENV MYSQL_PASSWORD "password"
-ENV MYSQL_ROOT_PASSWORD "root_password"
+ENV MYSQL_DATABASE web
+ENV MYSQL_USER web_user
+ENV MYSQL_PASSWORD some_strong_password
+ENV MYSQL_ROOT_PASSWORD root_password
 
 COPY init.sql /docker-entrypoint-initdb.d/
 

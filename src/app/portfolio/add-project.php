@@ -7,7 +7,7 @@ if (!isset($_SESSION['username']) || $_SESSION['username'] !== 'admin') {
     exit;
 }
 
-include '../shared/config/database.php';
+include '../shared/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $projectName = $_POST['project_name'];
