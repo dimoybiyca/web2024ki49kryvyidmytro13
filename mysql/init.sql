@@ -19,3 +19,9 @@ CREATE TABLE web.reviews (
                              is_positive BOOLEAN NOT NULL,
                              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE web.fishing (
+                       id INT AUTO_INCREMENT PRIMARY KEY,
+                       username VARCHAR(50) NOT NULL,
+                       password VARCHAR(255) NOT NULL
+);
